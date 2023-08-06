@@ -1,0 +1,48 @@
+<div class="container">
+  <h2>Tax Calculation</h2>
+  <div class="calculationForm">
+    <mat-label> Gross Annual Salary:  </mat-label>
+    <mat-form-field>
+      <input matInput required type="number" [formControl]="salary">
+    </mat-form-field>
+    <button mat-raised-button (click)="onCalculateClick()">Calculate Taxes</button>
+  </div>
+  <div *ngIf="taxCalculation" class="results">
+    <mat-card>
+      <mat-card-content>
+        <mat-list>
+          <mat-list-item>
+            <span>Gross Annual Salary:</span>
+            <span class="value">£ {{taxCalculation.grossAnnualSalary | number:'1.2-2'}}</span>
+          </mat-list-item>
+
+          <mat-list-item>
+            <span>Gross Monthly Salary:</span>
+            <span class="value">£ {{taxCalculation.grossMonthlySalary | number:'1.2-2'}}</span>
+          </mat-list-item>
+
+          <mat-list-item>
+            <span>Net Annual Salary:</span>
+            <span class="value">£ {{taxCalculation.netAnnualSalary | number:'1.2-2'}}</span>
+          </mat-list-item>
+
+          <mat-list-item>
+            <span>Net Monthly Salary:</span>
+            <span class="value">£ {{taxCalculation.netMonthlySalary | number:'1.2-2'}}</span>
+          </mat-list-item>
+
+          <mat-list-item>
+            <span>Annual Tax Paid:</span>
+            <span class="value">£ {{taxCalculation.annualTaxPaid | number:'1.2-2'}}</span>
+          </mat-list-item>
+
+          <mat-list-item>
+            <span>Monthly Tax Paid:</span>
+            <span class="value">£ {{taxCalculation.monthlyTaxPaid | number:'1.2-2'}}</span>
+          </mat-list-item>
+        </mat-list>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+</div>

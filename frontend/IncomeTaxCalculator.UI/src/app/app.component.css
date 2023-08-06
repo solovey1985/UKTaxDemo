@@ -1,0 +1,9 @@
+.container {
+    width: auto;
+    margin: auto;
+    align-self: center;
+    justify-content: center;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+}
